@@ -28,6 +28,10 @@ function pesquisar() {
       descricao = elemento.descricao.toLowerCase();
 
       // Verifica se a palavra-chave está presente no título ou descrição
+      if (valueInputPesquisa == "") {
+        sectionResultadosPesquisa.innerHTML = "Nada foi encontrado";
+        return;
+      }
       if (titulo.includes(valueInputPesquisa) || descricao.includes(valueInputPesquisa)) {
         // Adiciona o resultado aos resultados da pesquisa
         resultados += `
